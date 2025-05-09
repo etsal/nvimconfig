@@ -17,6 +17,7 @@ if exists("g:loaded_linuxsty")
     finish
 endif
 let g:loaded_linuxsty = 1
+let g:linuxsty_patterns = [ "/linux/" ]
 
 set wildignore+=*.ko,*.mod.c,*.order,modules.builtin
 
