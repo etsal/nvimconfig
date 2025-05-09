@@ -191,3 +191,7 @@
     vim.api.nvim_set_keymap('', '<leader>n', ':cn<cr>', {})
     vim.api.nvim_set_keymap('', '<leader>p', ':cp<cr>', {})
 -- }
+
+-- Extensions {
+	vim.cmd.colorscheme("tokyonight")
+-- }
