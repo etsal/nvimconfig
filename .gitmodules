@@ -1,3 +1,6 @@
 [submodule "nvim-lspconfig"]
 	path = nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "fzf-lua"]
+	path = fzf-lua
+	url = https://github.com/ibhagwan/fzf-lua.git
