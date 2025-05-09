@@ -11,3 +11,5 @@ for extension in $EXTENSIONS; do
 	cp -r $extension ~/.local/share/nvim/site/pack/plugins/start/
 done
 
+sudo dnf install -y clang
+sudo dnf install -y fzf

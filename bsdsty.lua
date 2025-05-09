@@ -145,7 +145,7 @@
         --up
         vim.api.nvim_set_keymap('', '<S-F>', '<ESC>:NERDTreeToggle<RETURN>', {})
         --down
-        vim.api.nvim_set_keymap('', '<C-F>', '<ESC>:Tlist<RETURN>', {})
+        vim.api.nvim_set_keymap('', '<C-F>', '<ESC>:FzfLua files<RETURN>', {})
     -- }
     
     -- Tab usability {
@@ -194,4 +194,9 @@
 
 -- Extensions {
 	vim.cmd.colorscheme("tokyonight")
+	vim.api.nvim_set_keymap('', '<space>', '<C-f>', { noremap = true } )
+-- }
+
+-- Language Servers {
+	require'lspconfig'.clangd.setup{}
 -- }
