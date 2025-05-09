@@ -167,9 +167,6 @@
 " }
 
 " Mappings {
-    " ROT13 - fun
-    map <F12> ggVGg?
-
     " space / shift-space scroll in normal mode
     noremap <S-space> <C-b>
     noremap <space> <C-f>
@@ -224,7 +221,6 @@
     " }
 
     nmap <leader>w :w<cr> " Fast saving
-    map <C-D> yyp " <C-d> duplicates line
     map <leader>cd :cd %:p:h<cr> " change to current buffer directory
 
 " }
