@@ -145,25 +145,6 @@
     let b:match_ignorecase = 1 " case is stupid
     let perl_extended_vars=1 " highlight advanced perl vars
                               " inside strings
-
-    " TagList Settings {
-        let Tlist_Auto_Open=0 " let the tag list open automagically
-        let Tlist_Compact_Format = 1 " show small menu
-        let Tlist_Ctags_Cmd = 'ctags' " location of ctags
-        let Tlist_Enable_Fold_Column = 0 " do show folding tree
-        let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill
-                                        " yourself
-        let Tlist_File_Fold_Auto_Close = 0 " fold closed other trees
-        let Tlist_Sort_Type = "name" " order by
-        let Tlist_Use_Right_Window = 1 " split to the right side
-                                        " of the screen
-        let Tlist_WinWidth = 40 " 40 cols wide, so i can (almost always)
-                                 " read my functions
-        " Language Specifics {
-            " don't show variables in freaking php
-            let tlist_php_settings = 'php;c:class;d:constant;f:function'
-        " }
-    " }
 " }
 
 " Mappings {
@@ -226,20 +207,9 @@
 " }
 
 " Autocommands {
-    " Ruby {
-    " ruby standard 2 spaces, always
-    au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2
-    au BufRead,BufNewFile *.rb,*.rhtml set softtabstop=2
-    " }
     " Python {
     " Add cursor highliting in python files
     au BufNewFile,BufRead *.py set cursorcolumn
-    " }
-    " Puppet {
-    au BufNewFile,BufRead *.pp set filetype=puppet
-    " }
-    " Jinja Jinja2 {
-    au BufNewFile,BufRead *.j2 set filetype=jinja
     " }
 " }
 
@@ -248,23 +218,6 @@ autocmd VimEnter * map <C-Left>  <ESC>:bp<CR>
 autocmd VimEnter * map <C-Right> <ESC>:bn<CR>
 autocmd VimEnter * map <C-Up> <ESC>:Tlist<CR>
 autocmd VimEnter * map <C-Down> <ESC>:NERDTreeToggle<CR>
-" }
-
-" GUI Settings {
-if has("gui_running")
-    " Basics {
-        colorscheme lucius " my color scheme (only works in GUI)
-        set guifont=Liberation\ Mono\ 8 " My favorite font
-        set guioptions=ce
-        "              ||
-        "              |+-- use simple dialogs rather than pop-ups
-        "              +  use GUI tabs, not console style tabs
-        set guioptions=-T
-        set guioptions=-M
-        set guitablabel=%t
-        set mousehide " hide the mouse cursor when typing
-    " }
-endif
 " }
 
 " Cope section {
