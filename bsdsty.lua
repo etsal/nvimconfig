@@ -200,20 +200,19 @@
 -- Language Servers {
 	vim.diagnostic.config({ virtual_test = true })
 
-	vim.lsp.config('rust_analyzer', {
-		settings = {
-			['rust-analyzer'] = {
-				diagnostics = {
-					enable = false;
-				}
-			}
-		}
-	})
+	-- Allow inlay hints
+	vim.lsp.inlay_hint.enable(true)
 
-	vim.lsp.config.clangd = {
-		cmd = { 'clangd', '--background-index' },
-		root_markers = { 'compile_commands.json', 'compile_flags.txt' },
-		filetypes = { 'c', 'cpp' },
-	}
+	-- Enable more detailed inline diagnostics
+	vim.keymap.set('n', 'gK',
+		function()
+			local new_config = not vim.diagnostic.config().virtual_lines
+			vim.diagnostic.config({ virtual_lines = new_config })
+		end,
+		{
+			desc = 'Toggle diagnostic virtual_lines'
+		}
+	)
+
 	vim.lsp.enable({ 'clangd', 'rust_analyzer' })
 -- }
