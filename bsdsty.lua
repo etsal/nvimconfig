@@ -147,7 +147,7 @@
         --down
         vim.api.nvim_set_keymap('', '<C-F>', '<ESC>:FzfLua files<RETURN>', {})
     -- }
-    
+
     -- Tab usability {
         vim.api.nvim_set_keymap('', '<C-<>', '<ESC>:tabprevious<RETURN>', {})
         vim.api.nvim_set_keymap('', '<C->>', '<ESC>:tabnext<RETURN>', {})
@@ -198,8 +198,9 @@
 -- }
 
 -- Language Servers {
-	require'lspconfig'.clangd.setup{}
-	require'lspconfig'.rust_analyzer.setup{
+	vim.diagnostic.config({ virtual_test = true })
+
+	vim.lsp.config('rust_analyzer', {
 		settings = {
 			['rust-analyzer'] = {
 				diagnostics = {
@@ -207,5 +208,12 @@
 				}
 			}
 		}
+	})
+
+	vim.lsp.config.clangd = {
+		cmd = { 'clangd', '--background-index' },
+		root_markers = { 'compile_commands.json', 'compile_flags.txt' },
+		filetypes = { 'c', 'cpp' },
 	}
+	vim.lsp.enable({ 'clangd', 'rust_analyzer' })
 -- }

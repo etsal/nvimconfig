@@ -21,4 +21,3 @@ done
 sudo dnf install -y clang
 sudo dnf install -y fzf
 rustup component add rust-analyzer
-
