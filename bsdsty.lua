@@ -203,6 +203,9 @@
 	-- Allow inlay hints
 	vim.lsp.inlay_hint.enable(true)
 
+	-- Add space to the left so the text doesn't thrash on new errors/warnings
+	vim.wo.signcolumn="yes"
+
 	-- Enable more detailed inline diagnostics
 	vim.keymap.set('n', 'gK',
 		function()
