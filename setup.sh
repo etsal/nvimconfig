@@ -21,3 +21,9 @@ done
 sudo dnf install -y clang
 sudo dnf install -y fzf
 rustup component add rust-analyzer
+
+# Install i3
+sudo dnf install -y i3 i3lock i3status nautilus
+mkdir -p $HOME/.config/i3
+cp $PWD/i3_config $HOME/.config/i3
+
