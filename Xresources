@@ -1,0 +1,6 @@
+#include ".local/share/Xresources-themes/iterm-Darkside.Xresources"
+
+XTerm*faceName:Source Code Pro
+XTerm*faceSize:15
+XTerm*saveLines: 1000
+XTerm*geometry: +50+100
